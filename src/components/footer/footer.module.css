@@ -1,0 +1,28 @@
+.footer {
+
+    background-color:#e56b6f75 ;
+
+    padding:5px 30px;
+    /* position: absolute;
+    bottom: 0; */
+}
+.footer__logo{
+    display: flex;
+    align-items: center;
+}
+.red {
+    color: red;
+    padding: 0;
+    margin: 0;
+  }
+  .logocontainer{
+      cursor: pointer;
+      font-size: 1.4rem;
+  }
+  .apps{
+
+    display: flex;
+    
+  }
+
+  .apps li{margin: 5px;}

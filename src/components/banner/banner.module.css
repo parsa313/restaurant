@@ -1,0 +1,36 @@
+.banner {
+    margin-top: 30px;
+  }
+.red {
+  color: #e56b6f;
+}
+.banner__text {
+ padding-left: 81px;
+}
+.banner__text p {
+  text-align: left;
+  opacity: 0.9;
+  text-transform: capitalize;
+  width: 400px;
+}
+.banner__text h1 {
+  text-align: left;
+
+  width: 300px;
+}
+
+.button {
+  background-color: #e56b6f;
+  outline: 0;
+  border: 0;
+  border-radius: 20px;
+  padding: 7px 15px;
+  color: white;
+  cursor: pointer;
+}
+.banner__img{
+
+    width: 320px;
+    position: relative;
+    bottom: 41px;
+}
