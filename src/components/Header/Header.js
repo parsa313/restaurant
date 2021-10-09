@@ -4,7 +4,6 @@ import { NavLink } from "react-router-dom";
 import styles from "./Header.module.css";
 
 import Shopicon from "./../ui/shopicon/Shopicon";
-import { Fragment } from "react/cjs/react.production.min";
 
 function Header(props) {
   return (
