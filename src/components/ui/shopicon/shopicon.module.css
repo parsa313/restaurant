@@ -1,0 +1,47 @@
+@keyframes bump {
+  0% {
+    transform: scale(1);
+  }
+  10% {
+    transform: scale(0.9);
+  }
+
+  30% {
+    transform: scale(1.1);
+  }
+
+  50% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.icon {
+  color: #720026;
+  cursor: pointer;
+}
+
+.number {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: -7px;
+  right: -4px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  color: white;
+  background-color: #e56b6f;
+}
+
+.iconcontainer {
+  position: relative;
+  top: 5px;
+  display: inline-block;
+  cursor: pointer;
+}
+.bump {
+  animation: bump 300ms;
+}

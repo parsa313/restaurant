@@ -1,0 +1,22 @@
+.text {
+  color: #e56b6f;
+  font-size: 0.9rem;
+  text-transform: capitalize;
+}
+.title {
+  font-size: 1.7rem;
+  text-transform: capitalize;
+  /* max-width: 200px; */
+}
+.list img{
+    width: 150px;
+    
+}
+
+.list p{
+    text-transform: capitalize;
+}
+.mid{
+    position: relative;
+    top: 38px;
+}
