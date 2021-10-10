@@ -25,4 +25,7 @@
     
   }
 
-  .apps li{margin: 5px;}
+.apps li{
+  margin: 5px;
+  cursor: pointer;
+}
