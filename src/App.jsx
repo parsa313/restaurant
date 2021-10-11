@@ -5,6 +5,7 @@ import styles from "./app.module.css";
 import Home from "./pages/home/Home";
 import Footer from "./components/footer/Footer";
 import Login from "./components/login/Login";
+import Menu from "./pages/menu/Menu";
 function App() {
   return (
     <Fragment>
@@ -17,12 +18,12 @@ function App() {
         <Home />
       </Route>
 
-      <Route path="/login">
-        <div >
-        <Login />
+      <Route path="/menu">
+        <Menu />
+      </Route>
 
-        </div>
-        
+      <Route path="/login">
+        <Login />
       </Route>
 
       <Footer />

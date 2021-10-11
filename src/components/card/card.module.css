@@ -1,22 +1,32 @@
-<<<<<<< HEAD
 .button {
-    background-color:#e56b6f
-    ;
-    outline: 0;
-    border: 0;
-    border-radius: 10px;
-    padding: 5px 9px;
-    color: white;
-    cursor: pointer;
-=======
-.button {
-    background-color:#e56b6f
-    ;
-    outline: 0;
-    border: 0;
-    border-radius: 10px;
-    padding: 5px 9px;
-    color: white;
-    cursor: pointer;
->>>>>>> 7ef078db44d0d1345469497d37671f8adfb00514
-  }
+  background-color: #e56b6f;
+  outline: 0;
+  border: 0;
+  border-radius: 10px;
+  padding: 2px 2px;
+  color: white;
+  cursor: pointer;
+  font-size: large;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  margin-bottom: 80px;
+  border: solid 1px grey;
+  padding: 0;
+  box-shadow: 0 0 15px  rgb(65, 64, 64);
+}
+.card-footer {
+  display: flex;
+  background-color: #e56b6f49;
+  justify-content: space-between;
+  padding: 5px 10px;
+}
+.add {
+  color: #e56b6f;
+  cursor: pointer;
+}
+.card-img {
+  height: 150px;
+}
