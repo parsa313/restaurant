@@ -1,11 +1,11 @@
 .banner {
-    margin-top: 30px;
-  }
+  margin-top: 30px;
+}
 .red {
   color: #e56b6f;
 }
 .banner__text {
- padding-left: 81px;
+  padding-left: 81px;
 }
 .banner__text p {
   text-align: left;
@@ -28,9 +28,8 @@
   color: white;
   cursor: pointer;
 }
-.banner__img{
-
-    width: 320px;
-    position: relative;
-    bottom: 41px;
+.banner__img {
+  width: 320px;
+  position: relative;
+  bottom: 41px;
 }

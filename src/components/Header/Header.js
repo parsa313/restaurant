@@ -1,16 +1,18 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 import styles from "./Header.module.css";
 
 import Shopicon from "./../ui/shopicon/Shopicon";
+import Logo from "../../Logo/Logo";
 
 function Header(props) {
+  const islogedin = useSelector((state) => state.login.islogedin);
+
   return (
     <nav className={`${styles.header} container`}>
-      <span className={styles.logocontainer}>
-        f<span className={styles.red}>oo</span>dy
-      </span>
+      <Logo />
 
       <ul className={styles.header__list}>
         <li>
@@ -60,15 +62,18 @@ function Header(props) {
       </ul>
 
       <ul className={styles.header__list}>
+        {islogedin && (
+          <li>
+            <Shopicon />
+          </li>
+        )}
         <li>
-          <Shopicon/>
-        </li>
-        <li>
-          <NavLink to="/login"><button className={styles.button}>Sign Up</button></NavLink>
+          <NavLink to="/login">
+            <button className={styles.button}>Sign Up</button>
+          </NavLink>
         </li>
       </ul>
     </nav>
-
   );
 }
 

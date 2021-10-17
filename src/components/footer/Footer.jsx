@@ -1,5 +1,5 @@
-
 import React from "react";
+import Logo from "../../Logo/Logo";
 import styles from "./footer.module.css";
 
 function Footer() {
@@ -7,9 +7,7 @@ function Footer() {
     <div className={`${styles.footer} container-fluid`}>
       <div className="row">
         <div className={`col-md-3 text-center ${styles.footer__logo}`}>
-          <span className={styles.logocontainer}>
-            f<span className={styles.red}>oo</span>dy
-          </span>
+         <Logo/>
         </div>
         <div className="col-md-3">
           <ul>

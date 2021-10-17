@@ -1,31 +1,22 @@
 .footer {
+  background-color: #e56b6f75;
 
-    background-color:#e56b6f75 ;
-
-    padding:5px 30px;
-    /* position: absolute;
-    bottom: 0; */
+  padding: 5px 30px;
 }
-.footer__logo{
-    display: flex;
-    align-items: center;
+.footer li {
+  cursor: pointer;
+  max-width: fit-content;
 }
-.red {
-    color: red;
-    padding: 0;
-    margin: 0;
-  }
-  .logocontainer{
-      cursor: pointer;
-      font-size: 1.4rem;
-  }
-  .apps{
+.footer__logo {
+  display: flex;
+  align-items: center;
+}
 
-    display: flex;
-    
-  }
+.apps {
+  display: flex;
+}
 
-.apps li{
+.apps li {
   margin: 5px;
   cursor: pointer;
 }

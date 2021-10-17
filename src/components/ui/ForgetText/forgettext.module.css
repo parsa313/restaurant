@@ -1,0 +1,11 @@
+.title{
+
+    font-size: 1.2rem;
+}
+
+.text{
+    color: rgb(48, 45, 45);
+    text-transform: capitalize;
+    opacity: 0.95;
+    width: 350px;
+}
