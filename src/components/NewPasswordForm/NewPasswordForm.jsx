@@ -2,10 +2,12 @@ import { Field, Form, Formik, ErrorMessage } from "formik";
 import React from "react";
 import FormContainer from "../ui/FormContainer/FormContainer";
 import styles from "./newpassword.module.css";
+import { useSelector } from "react-redux";
+import axios from "axios";
 let initialValues = { newpassword: "" };
-let onSubmit = () => {};
+
 let validate = (values) => {
-  let errors ={};
+  let errors = {};
   if (!values.newpassword) {
     errors.newpassword = "Required";
   } else if (values.newpassword.trim().length < 6) {
@@ -15,6 +17,17 @@ let validate = (values) => {
   return errors;
 };
 function NewPasswordForm() {
+  const idToken = useSelector((state) => state.login.token);
+  let onSubmit = (values) => {
+    let url =
+      "https://identitytoolkit.googleapis.com/v1/accounts:update?key=AIzaSyBp5kJ3A3m0PKFX3oja3gYfq8U-hyKYW0A";
+    let newPassword = values.newpassword;
+    axios.post(
+      url,
+      { idToken, password: newPassword, returnSecureToken: false },
+      { headers: { "Content-Type": "application/json" } }
+    );
+  };
   return (
     <FormContainer>
       <Formik
@@ -24,7 +37,6 @@ function NewPasswordForm() {
       >
         <Form>
           <div class="mb-3">
-           
             <div className="text-center mb-2">Enter Your New Password</div>
             <Field name="newpassword">
               {({ field, form, meta }) => (
@@ -44,7 +56,9 @@ function NewPasswordForm() {
               render={(msg) => <div className={styles.texterror}>{msg}</div>}
             />
           </div>
-          <button type="submit" className={styles.button}>Change</button>
+          <button type="submit" className={styles.button}>
+            Change
+          </button>
         </Form>
       </Formik>
     </FormContainer>

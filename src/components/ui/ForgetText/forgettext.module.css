@@ -9,3 +9,8 @@
     opacity: 0.95;
     width: 350px;
 }
+.alert{
+
+    color: red;
+    font-weight: 500;
+}

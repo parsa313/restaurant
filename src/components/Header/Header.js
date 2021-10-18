@@ -67,11 +67,13 @@ function Header(props) {
             <Shopicon />
           </li>
         )}
-        <li>
-          <NavLink to="/login">
-            <button className={styles.button}>Sign Up</button>
-          </NavLink>
-        </li>
+        {!islogedin && (
+          <li>
+            <NavLink to="/login">
+              <button className={styles.button}>Sign Up</button>
+            </NavLink>
+          </li>
+        )}
       </ul>
     </nav>
   );

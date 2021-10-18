@@ -18,12 +18,8 @@ function Login() {
 
   let onSubmit = (values) => {
     let url;
-
     let email = values.email;
     let password = values.password;
-
-    console.log(email, password);
-
     if (!logein) {
       url =
         "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyBp5kJ3A3m0PKFX3oja3gYfq8U-hyKYW0A";
@@ -37,19 +33,33 @@ function Login() {
         { email, password, returnSecureToken: true },
         { headers: { "Content-Type": "application/json" } }
       )
-      .then((res) =>
+      .then((res) => {
+        if (res.status == 200) {
+          return res;
+        } else {
+          let errorMessage = "Authenthication failed";
+          if (res.data.error.message) {
+            errorMessage = res.data.error.message;
+          }
+          throw new Error(errorMessage);
+        }
+      })
+      .then((res) => {
         dispatch(
           logInActions.logIn({
             idToken: res.data.idToken,
             exptime: new Date(
-              new Date().getTime() + (+res.data.expiresIn) * 1000
+              new Date().getTime() + +res.data.expiresIn * 1000
             ).toISOString(),
           })
-        )
-      );
-    // .then((res) => console.log(res.data.idToken))
-    // .then((data) => dispatch(logInActions.logIn(data.idToken)));
-    history.replace("/home");
+        );
+        history.replace("/home");
+      })
+      .catch((error) => {
+
+        alert(error.message)
+      })
+    
   };
 
   function validate(values) {
@@ -77,7 +87,6 @@ function Login() {
         <NewPassword />
       </Route>
       <Route path={`${match.url}`} exact>
-        {/* <div className="d-flex justify-content-center"> */}
         <Formik
           initialValues={initialValues}
           onSubmit={onSubmit}
