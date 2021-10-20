@@ -6,10 +6,20 @@ import Home from "./pages/home/Home";
 import Footer from "./components/footer/Footer";
 import Login from "./components/login/Login";
 import Menu from "./pages/menu/Menu";
+import Modal from "./components/ui/modal/Modal";
+import { useSelector } from "react-redux";
+import Cart from "./components/cart/Cart";
 function App() {
+  const isCartShown = useSelector((state) => state.cart.isCartShown);
   return (
     <Fragment>
       <Header />
+      {isCartShown && (
+        <Modal>
+          <Cart />
+        </Modal>
+      )}
+
       <Route path="/" exact>
         <Redirect to="/home" />
       </Route>

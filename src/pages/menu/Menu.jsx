@@ -26,7 +26,7 @@ function Menu() {
     <div className="container mt-5  d-flex justify-content-center">
       <div className={styles.grid}>
         {foods.map((food) => (
-          <Card title={food.title} price={food.price} img={food.img} />
+          <Card title={food.title} price={food.price} img={food.img} id={food.id} />
         ))}
       </div>
     </div>

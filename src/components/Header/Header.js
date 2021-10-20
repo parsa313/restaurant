@@ -3,9 +3,8 @@ import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 import styles from "./Header.module.css";
-
+import Logo from './../Logo/Logo'
 import Shopicon from "./../ui/shopicon/Shopicon";
-import Logo from "../../Logo/Logo";
 
 function Header(props) {
   const islogedin = useSelector((state) => state.login.islogedin);
@@ -13,7 +12,7 @@ function Header(props) {
   return (
     <nav className={`${styles.header} container`}>
       <Logo />
-
+      
       <ul className={styles.header__list}>
         <li>
           <NavLink
