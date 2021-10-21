@@ -1,5 +1,5 @@
 import Header from "./components/Header/Header";
-import { Switch, Route, Link, Redirect } from "react-router-dom";
+import {  Route, Redirect } from "react-router-dom";
 import { Fragment } from "react";
 import styles from "./app.module.css";
 import Home from "./pages/home/Home";
@@ -11,6 +11,7 @@ import { useSelector } from "react-redux";
 import Cart from "./components/cart/Cart";
 function App() {
   const isCartShown = useSelector((state) => state.cart.isCartShown);
+  const islogedin = useSelector((state) => state.login.islogedin);
   return (
     <Fragment>
       <Header />
@@ -33,7 +34,12 @@ function App() {
       </Route>
 
       <Route path="/login">
-        <Login />
+        {islogedin && <Redirect to="/home" />}
+        {!islogedin && <Login />}
+      </Route>
+
+      <Route path="*">
+        <Redirect to="/home" />
       </Route>
 
       <Footer />

@@ -13,15 +13,15 @@ function Introduce() {
         <h2 className={styles.title}>your favorite food delievery partner</h2>
         <ul className={styles.list}>
           <div className="row">
-            <li className="col-md-4">
+            <li className="col-md-4 mb-3 mb-md-0">
               <img className="img-fluid" src={easy} alt="easy" />
               <p>easy to order</p>
             </li>
-            <li className={`col-md-4 ${styles.mid}`}>
+            <li className={`col-md-4 mb-3 mb-md-0 ${styles.mid}`}>
               <img className="img-fluid" src={delivery} alt="delivery" />
               <p>fastest delivery</p>
             </li>
-            <li className="col-md-4">
+            <li className="col-md-4 mb-3 mb-md-0">
               <img className="img-fluid" src={quality} alt="quality" />
               <p>best quality</p>
             </li>

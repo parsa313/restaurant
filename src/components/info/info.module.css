@@ -4,8 +4,6 @@
 
 .img {
   width: 450px;
-  position: relative;
-  top: -50px;
 }
 .button {
   background-color: #e56b6f;
@@ -18,5 +16,13 @@
 }
 
 .info {
-  margin: 200px;
+  margin-top: 160px;
+  margin-bottom: 160px;
+}
+
+@media screen and (min-width: 768px) {
+  .img {
+    position: relative;
+    top: -50px;
+  }
 }

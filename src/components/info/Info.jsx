@@ -19,7 +19,7 @@ function Info() {
           </p>
           <button className={styles.button}>Read More</button>
         </div>
-        <div className="col-md-6 text-center">
+        <div className="d-none d-md-block col-md-6 text-center">
           <img
             className={`${styles.img} img-fluid`}
             src={person}

@@ -16,7 +16,13 @@
 .list p{
     text-transform: capitalize;
 }
-.mid{
+
+
+@media screen and (min-width:768px) {
+
+  .mid{
     position: relative;
     top: 38px;
+}
+  
 }

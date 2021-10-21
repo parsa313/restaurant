@@ -7,8 +7,9 @@
   text-transform: capitalize;
   margin-top: 40px;
 }
-.bottom a {
+.bottom span {
   color: rgb(124, 13, 124);
+  cursor: pointer;
 }
 .forget {
   color: rgb(124, 13, 124);

@@ -32,13 +32,17 @@ let cartSlice = createSlice({
       let deleteItem = state.items.find(
         (item) => item.id === action.payload.id
       );
+
+      console.log(deleteItem);
       if (deleteItem.number > 1) {
         deleteItem.number--;
+        console.log("more 1");
       }
-      if (deleteItem.number === 1) {
+      else if (deleteItem.number === 1) {
         let deleteItemIndex = state.items.findIndex(
           (item) => item.id === action.payload.id
         );
+        console.log("1");
 
         state.items.splice(deleteItemIndex, 1); //if there was only 1  item  of what we want to delet we totally delete it
       }

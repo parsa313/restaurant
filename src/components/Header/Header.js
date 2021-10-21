@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 import styles from "./Header.module.css";
-import Logo from './../Logo/Logo'
+import Logo from "./../Logo/Logo";
 import Shopicon from "./../ui/shopicon/Shopicon";
 
 function Header(props) {
@@ -12,7 +12,7 @@ function Header(props) {
   return (
     <nav className={`${styles.header} container`}>
       <Logo />
-      
+
       <ul className={styles.header__list}>
         <li>
           <NavLink
@@ -38,22 +38,24 @@ function Header(props) {
         </li>
         <li>
           <NavLink
+            className="d-none d-md-block"
             activeStyle={{
               fontWeight: "bold",
               color: "#e56b6f",
             }}
-            to="/h"
+            to="/AboutUs"
           >
             About Us
           </NavLink>
         </li>
         <li>
           <NavLink
+            className="d-none d-md-block"
             activeStyle={{
               fontWeight: "bold",
               color: "#e56b6f",
             }}
-            to="/p"
+            to="/Contact"
           >
             Contact
           </NavLink>

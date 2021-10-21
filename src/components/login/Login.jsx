@@ -163,17 +163,17 @@ function Login() {
               <div className={`${styles.bottom} text-center`}>
                 {!logein ? (
                   <>
-                    already have an account?'{" "}
-                    <a href="#" onClick={() => setLogein((prev) => !prev)}>
+                    already have an account?{" "}
+                    <span  onClick={() => setLogein((prev) => !prev)}>
                       log in
-                    </a>
+                    </span>
                   </>
                 ) : (
                   <>
                     new user?{" "}
-                    <a href="#" onClick={() => setLogein((prev) => !prev)}>
+                    <span onClick={() => setLogein((prev) => !prev)}>
                       sign up
-                    </a>
+                    </span>
                   </>
                 )}
               </div>

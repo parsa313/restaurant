@@ -30,6 +30,11 @@
 }
 .banner__img {
   width: 320px;
-  position: relative;
-  bottom: 41px;
+}
+
+@media screen and (min-width: 768px) {
+  .banner__img {
+    position: relative;
+    bottom: 41px;
+  }
 }
