@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
-let logOutTimer;
-
+import store from "./store";
+import { logout } from "./login-actions";
 let calculateRemainingTime = (exptime) => {
   return new Date(exptime).getTime() - new Date().getTime();
 };
@@ -10,9 +10,13 @@ let retrieveStoredToken = () => {
   if (token && exptime) {
     let remainingTime = calculateRemainingTime(exptime);
     if (remainingTime > 6000) {
-      //if we have a little time left
-      logOutTimer = setTimeout(() => {
-        logInSlice.caseReducers.logOut();
+      window.logOutTimer = setTimeout(() => {
+        
+        store.dispatch(logout());
+
+        if (window.logOutTimer) {
+          clearTimeout(window.logOutTimer);
+        }
       }, remainingTime);
 
       return { token, islogedin: true };
@@ -23,6 +27,7 @@ let retrieveStoredToken = () => {
     return { token: null, islogedin: false };
   }
 };
+
 let initialState = {
   token: retrieveStoredToken().token,
   islogedin: retrieveStoredToken().islogedin,
@@ -31,24 +36,11 @@ let logInSlice = createSlice({
   name: "login",
   initialState,
   reducers: {
-    logIn: (state, action) => {
-      localStorage.setItem("token", action.payload.idToken);
-      localStorage.setItem("exptime", action.payload.exptime);
-      state.token = action.payload.idToken;
-      state.islogedin = true;
-
-      logOutTimer = setTimeout(() => {
-        logInSlice.caseReducers.logOut();
-      }, calculateRemainingTime(action.payload.exptime));
+    setIsLogedIn: (state, action) => {
+      state.islogedin = action.payload;
     },
-    logOut: (state) => {
-      localStorage.removeItem("token");
-      localStorage.removeItem("exptime");
-      state.token = null;
-      state.islogedin = false;
-      if (logOutTimer) {
-        clearTimeout(logOutTimer);
-      }
+    setToken: (state, action) => {
+      state.token = action.payload;
     },
   },
 });

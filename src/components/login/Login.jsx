@@ -1,13 +1,13 @@
 import axios from "axios";
 import { Field, Form, Formik, ErrorMessage } from "formik";
-import React, { useState, useRef, Fragment } from "react";
+import React, { useState, Fragment } from "react";
 import { useDispatch } from "react-redux";
 import { Route, useHistory, useRouteMatch } from "react-router";
 import FormContainer from "../ui/FormContainer/FormContainer";
 import NewPasswordForm from "../NewPasswordForm/NewPasswordForm";
-import { logInActions } from "./../../store/login-slice";
 import styles from "./login.module.css";
 import NewPassword from "../../pages/newpassword/NewPassword";
+import {login} from './../../store/login-actions'
 let initialValues = { email: "", password: "" };
 
 function Login() {
@@ -46,12 +46,18 @@ function Login() {
       })
       .then((res) => {
         dispatch(
-          logInActions.logIn({
-            idToken: res.data.idToken,
-            exptime: new Date(
-              new Date().getTime() + +res.data.expiresIn * 1000
-            ).toISOString(),
-          })
+          // logInActions.logIn({
+          //   idToken: res.data.idToken,
+          //   exptime: new Date(
+          //     new Date().getTime() + +res.data.expiresIn * 1000
+          //   ).toISOString(),
+          // })
+          login({
+              idToken: res.data.idToken,
+              exptime: new Date(
+                new Date().getTime() + +res.data.expiresIn * 1000
+              ).toISOString(),
+            })
         );
         history.replace("/home");
       })

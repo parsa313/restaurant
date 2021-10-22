@@ -5,7 +5,6 @@ import cartSlice from "../../../store/cart-slice";
 import { useEffect, useState } from "react";
 
 function Shopicon() {
-  console.log("rendered");
   const [iconIsHighlighted, seticonIsHighlighted] = useState(false);
 
   let iconContainerClass = `${styles.iconcontainer} ${

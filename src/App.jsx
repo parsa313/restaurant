@@ -1,6 +1,6 @@
 import Header from "./components/Header/Header";
-import {  Route, Redirect } from "react-router-dom";
-import { Fragment } from "react";
+import { Route, Redirect } from "react-router-dom";
+import { Fragment} from "react";
 import styles from "./app.module.css";
 import Home from "./pages/home/Home";
 import Footer from "./components/footer/Footer";
