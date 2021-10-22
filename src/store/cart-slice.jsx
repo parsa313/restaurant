@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 let initialState = {
-  items: [],
-  totalAmount: 0,
+  items: JSON.parse(localStorage.getItem("items")) || [],
+  totalAmount: localStorage.getItem("totalAmount") || 0,
   isCartShown: false,
 };
 
@@ -25,6 +25,13 @@ let cartSlice = createSlice({
       } else {
         state.items[sameItemIndex].number++;
       }
+
+      //update items on local storage
+      localStorage.removeItem("items");
+      localStorage.removeItem("totalAmount");
+
+      localStorage.setItem("totalAmount", state.totalAmount);
+      localStorage.setItem("items", JSON.stringify(state.items));
     },
     removeItem: (state, action) => {
       state.totalAmount -= action.payload.price;
@@ -37,8 +44,7 @@ let cartSlice = createSlice({
       if (deleteItem.number > 1) {
         deleteItem.number--;
         console.log("more 1");
-      }
-      else if (deleteItem.number === 1) {
+      } else if (deleteItem.number === 1) {
         let deleteItemIndex = state.items.findIndex(
           (item) => item.id === action.payload.id
         );
@@ -46,6 +52,13 @@ let cartSlice = createSlice({
 
         state.items.splice(deleteItemIndex, 1); //if there was only 1  item  of what we want to delet we totally delete it
       }
+
+      //update items on local storage
+      localStorage.removeItem("items");
+      localStorage.removeItem("totalAmount");
+
+      localStorage.setItem("totalAmount", state.totalAmount);
+      localStorage.setItem("items", JSON.stringify(state.items));
     },
 
     showCartHandler: (state) => {
